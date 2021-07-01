@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ticket.api.mapper.user.UserMapper">
+  
+  <select id="getUserIdCnt" parameterType="UserDto" resultType="int">
+    /* ID 개수 조회 */
+    SELECT COUNT(1)
+      FROM USER
+     WHERE USER_ID = #{userId}
+  </select>
+  
+  <insert id="insUser" parameterType="UserDto">
+    /* 회원 등록 */
+    INSERT INTO USER (
+           USER_ID,
+           USER_PW
+    ) VALUES (
+           #{userId},
+           #{userPw}
+    )
+  </insert>
+  
+  <update id="updUserPw" parameterType="UserDto">
+    /* 비밀번호 수정 */
+    UPDATE USER
+       SET USER_PW = #{newUserPw}
+     WHERE USER_ID = #{userId}
+       AND USER_PW = #{userPw}
+  </update>
+  
+  <delete id="delUser" parameterType="UserDto">
+    /* 회원 삭제 */
+    DELETE
+      FROM USER
+     WHERE USER_ID = #{userId}
+       AND USER_PW = #{userPw}
+  </delete>
+  
+</mapper>

@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "16c270a6-7f93-4bb9-aa52-27d405a085d9",
+		"name": "ticket-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "회원 가입",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"123\",\r\n    \"userPw\": \"456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7174/user/join",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7174",
+					"path": [
+						"user",
+						"join"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "비밀번호 변경",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"123\",\r\n    \"userPw\": \"456\",\r\n    \"newUserPw\": \"4567\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7174/user/password/change",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7174",
+					"path": [
+						"user",
+						"password",
+						"change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "회원 삭제",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"123\",\r\n    \"userPw\": \"4567\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7174/user/out",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7174",
+					"path": [
+						"user",
+						"out"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
